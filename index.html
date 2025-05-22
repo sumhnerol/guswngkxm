@@ -28,12 +28,11 @@
     }
 
     .envelope-container {
-      position: relative;
-      width: 320px;
-      height: 240px;
-      cursor: pointer;
-      perspective: 900px;
-      flex-shrink: 0;
+  width: 320px;
+  height: 420px; /* 더 크게 확보 */
+  cursor: pointer;
+  perspective: 900px;
+  flex-shrink: 0;
     }
 
     .envelope {
@@ -94,6 +93,9 @@
       letter-spacing: 0.11em;
       font-weight: 400;
       overflow-y: auto;
+      top: auto;
+      bottom: 0; /* 아래가 아닌 위로 올라오게 변경 */
+      transform: translateY(100%) scale(0.9) rotate(-1deg); /* 펼쳐질 방향도 반대로 */
     }
 
     .envelope.open .letter {
