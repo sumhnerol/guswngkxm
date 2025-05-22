@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>언니...</title>
+  <style>
+    @font-face {
+      font-family: 'Dovemayo-Medium';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/Dovemayo-Medium.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: #f6f1eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      font-family: 'Press Start 2P', monospace;
+      color: #4a453f;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .envelope-container {
+      position: relative;
+      width: 320px;
+      height: 240px;
+      cursor: pointer;
+      perspective: 900px;
+      flex-shrink: 0;
+    }
+
+    .envelope {
+      position: relative;
+      width: 100%;
+      height: 210px;
+      border: 3px solid #7a746a;
+      border-radius: 4px;
+      background: linear-gradient(135deg, #fcfbf7 0%, #dedbd3 100%);
+      box-shadow: inset 0 0 18px rgba(255,255,255,0.85), 0 8px 16px rgba(122,116,106,0.35);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .envelope:hover {
+      box-shadow: inset 0 0 25px rgba(255,255,255,0.95), 0 12px 28px rgba(122,116,106,0.55);
+    }
+
+    .envelope::before {
+      content: '';
+      position: absolute;
+      top: -55px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 160px solid transparent;
+      border-right: 160px solid transparent;
+      border-bottom: 55px solid #7a746a;
+      box-shadow: 0 6px 18px rgba(122,116,106,0.4);
+      transition: transform 0.6s ease;
+      transform-origin: bottom center;
+      border-radius: 2px;
+    }
+
+    .envelope.open::before {
+      transform: rotateX(180deg);
+    }
+
+    .letter {
+      position: absolute;
+      top: 18px;
+      left: 25px;
+      width: 270px;
+      height: 350px;
+      background: #e3dfd6;
+      border: 2px solid #a69f94;
+      box-shadow: inset 0 0 10px 4px rgba(255,255,255,0.95), 0 6px 18px rgba(166,159,148,0.4);
+      padding: 28px 35px;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(180px) scale(0.9) rotate(-1deg);
+      transition: transform 0.7s ease, opacity 0.7s ease;
+      pointer-events: none;
+      user-select: text;
+      border-radius: 5px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #5b534d;
+      letter-spacing: 0.11em;
+      font-weight: 400;
+      overflow-y: auto;
+    }
+
+    .envelope.open .letter {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0deg);
+      pointer-events: auto;
+    }
+
+    .stamp {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      color: #7a746a;
+      font-weight: 700;
+      font-size: 8px;
+      text-align: center;
+      line-height: 1.15;
+      padding: 0 8px 10px 8px;
+      user-select: none;
+      filter: drop-shadow(1px 1px 0 #c6bfae);
+      background: radial-gradient(circle at center, rgba(255,255,255,0.75) 10%, transparent 60%);
+      transform: rotate(-7deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .stamp img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      pointer-events: none;
+      user-select: none;
+      filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
+    }
+
+    .stamp small {
+      font-size: 6px;
+      letter-spacing: 0.15em;
+      margin-top: 0;
+    }
+
+    h2 {
+      margin: 0 0 14px 0;
+      font-size: 14px;
+      font-weight: 700;
+      text-shadow: 1px 1px 0 rgba(255 255 255 / 0.7);
+    }
+
+    p {
+      margin: 0;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="envelope-container" tabindex="0" aria-label="첫번째">
+    <div class="envelope">
+      <div class="stamp">
+        <img src="Unknown-23.jpg" alt="케로로 스탬프" />
+        악마맛쿠키<br /><small>현주</small>
+      </div>
+      <div class="letter">
+        <h2>좋았던거!!!</h2>
+        <p>시작하자마자 브금이 너무 잘 어울려서 좋았고 운명인 이유가 하나도 틀림없이 다 맞아서 좋았고 더 생길 것만
+          같아서 좋았음 벌써부터 운명인 이유가 150개인데... 얼마나 더 많을지 ㄷㄷ 어울리는 이모지가 센스있게 넣어서 너무 귀여움
+          사과게임 동점인 건 진짜 신기함 며칠 전에도 똑같이 말해서 너무 신기했음 운명인 이유에서 노란색 대머리가 햄버거 먹는 거
+          있는데 그거 너무 마음에 든다 이팝나무도 ㅇㅂ야 끝날 때 돌아가는 것도 귀여움 너무 귀엽다 에바야 뇌 구조도 마음에 든다 <br>진짜는 마지막이 제일 마음에 든다... 내가 제일 좋아하는 것 YOU... (나도얌) 언니 진짜 최고야 너무 잘해 </p>
+  </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="envelope-container" tabindex="0" aria-label="두번째">
+    <div class="envelope">
+      <div class="stamp">
+        <img src="Unknown-24.jpg" alt="케로로 스탬프" />
+        언니<br /><small>좋아</small>
+      </div>
+      <div class="letter">
+        <h2>아쉬웠던거!!</h2>
+        <p>그딴 거 ㄴ<br>언니 너무 좋아 하트하트 언니 좋은 점 웃기고 귀엽고 착하고 다정하고 멋있고 똘똘하고 목소리가 나긋해서 너무 좋고 혼잣말 많은 것도 너무 귀엽고 센스 있고 놀이도 잘해준다 놀이를 진짜 좋아하고 잘한다 마크 너무 잘해 루미큐브 잘한다 최근에 2번이나 날 이겼다 테런도 좀 잘하는 것 같다 학놀에도 재능이 있다 생이별 한다고 우는 것도 너무 웃기고 귀엽다 테스트놀이도 잘해 줘서 너무 좋다 밥도 잘 먹어서 좋다 답장하고 싶은데 이거 하느라 못해서 나 너무 슬프고 귀엽게 만들고 싶은데 한계를 느껴서 못하겠고 그냥 언니 좋다 에바야 최고야 펑도 잘해줘 ㄹㅇ 뭐지...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="envelope-container" tabindex="0" aria-label="세번째">
+    <div class="envelope">
+      <div class="stamp">
+        천사맛쿠키<br /><small>수빈</small>
+      </div>
+      <div class="letter">
+        <h2>언니에게...</h2>
+        <p>언니 ㅠㅠ 혼잣말하게 해서 미안 마크 이벤트 해줘서 고맙고 피피티 이벤트 해준 것도 고맙고 팜 이벤트도 해줘서 고마워 언니 너무 재능 있어서 나 매일 깜짝 놀라 앞으로도 깜짝깜짝 놀랄게 나는 언니랑 노는 게 정말 즐거워 그리고 나 바람 피운 적 없음 알지?...ㅠㅠ 모르면 ㅇㅂ야 ㄱㅂ보다 언니가 더 좋아 ㅈ보다 언니가 더 좋아 ㅂ보다 언니가 더 좋아 진짜로 그리고 이것도 처음 만들어봐 언니가 처음이야!!! 언니 ㄹㅇ ㅃㅃ ㄱ이지 ㅎㅎ 츄츄  </p>
+      </div>
+    </div>
+  </div>
+
+  <audio id="openSound" src="data:audio/wav;base64,UklGRkQAAABXQVZFZm10IBAAAAABAAEAgD4AAIA+AAABAAgAZGF0YQAAAAA="></audio>
+
+  <script>
+    const envelopes = document.querySelectorAll('.envelope');
+    const openSound = document.getElementById('openSound');
+
+    envelopes.forEach(envelope => {
+      envelope.addEventListener('click', () => {
+        envelopes.forEach(other => {
+          if (other !== envelope) other.classList.remove('open');
+        });
+        envelope.classList.toggle('open');
+        openSound.currentTime = 0;
+        openSound.play();
+      });
+    });
+  </script>
+</body>
+</html>
